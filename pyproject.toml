@@ -1,3 +1,6 @@
+[project]
+requires-python = ">=3.11"
+
 [tool.poetry]
 name = "library-db"
 version = "0.1.0"
@@ -7,7 +10,7 @@ readme = "README.md"
 packages = [{ include = "library_db", from = "src" }]
 
 [tool.poetry.dependencies]
-python = "^3.12"
+python = "^3.11"
 click = "^8.1.7"
 
 
@@ -81,9 +84,6 @@ line-length = 100
 # Allow unused variables when underscore-prefixed.
 dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
 
-# Assume Python 3.11.
-target-version = "py312"
-
 [tool.ruff.mccabe]
 max-complexity = 10
 
@@ -95,7 +95,6 @@ preview = true
 exclude = "setup.py"
 
 # basic 
-python_version = "3.12"
 pretty = true
 
 # be strict(ish)
