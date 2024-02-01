@@ -1,0 +1,126 @@
+[tool.poetry]
+name = "library-db"
+version = "0.1.0"
+description = "A database for library books."
+authors = ["Mikko Leppänen <mikko.leppanen@vaisala.com>"]
+readme = "README.md"
+packages = [{ include = "library_db", from = "src" }]
+
+[tool.poetry.dependencies]
+python = "^3.12"
+click = "^8.1.7"
+
+
+[tool.poetry.group.dev.dependencies]
+mypy = "^1.8.0"
+ruff = "^0.1.15"
+isort = "^5.13.2"
+black = "^24.1.1"
+pytest = "^8.0.0"
+pytest-cov = "^4.1.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.ruff]
+select = [
+    "E",
+    "F",
+    "B",
+    "W",
+    "C4",
+    "PIE",
+    "RET",
+    "SIM",
+    "RUF",
+    "C90",
+    "UP",
+    "ERA",
+    "ARG",
+    "TID",
+    "PERF",
+    "SLF",
+    "PTH",
+    "FURB",
+]
+
+ignore = [
+    "E501",  # line-too-long
+    "UP040", # uses `TypeAlias` annotation instead of the `type` keyword, remove this when mypy supports PEP 695
+]
+
+# Allow autofix for all enabled rules (when `--fix`) is provided.
+fixable = [
+    "E",
+    "F",
+    "B",
+    "W",
+    "C4",
+    "PIE",
+    "RET",
+    "SIM",
+    "RUF",
+    "C90",
+    "UP",
+    "ERA",
+    "ARG",
+    "TID",
+    "SLF",
+    "PTH",
+]
+unfixable = []
+
+# Exclude a variety of commonly ignored directories.
+exclude = [".git", ".mypy_cache", ".ruff_cache"]
+per-file-ignores = {}
+
+# Same as Black.
+line-length = 100
+
+# Allow unused variables when underscore-prefixed.
+dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
+
+# Assume Python 3.11.
+target-version = "py312"
+
+[tool.ruff.mccabe]
+max-complexity = 10
+
+[tool.ruff.lint]
+extend-select = ["FURB"]
+preview = true
+
+[tool.mypy]
+exclude = "setup.py"
+
+# basic 
+python_version = "3.12"
+pretty = true
+
+# be strict(ish)
+disallow_untyped_calls = true
+disallow_untyped_defs = true
+check_untyped_defs = true
+strict_equality = true
+no_implicit_optional = true
+
+# warnings
+warn_unused_ignores = true
+warn_unreachable = true
+warn_redundant_casts = true
+warn_unused_configs = true
+
+ignore_missing_imports = true
+
+
+[tool.isort]
+profile = "black"
+
+[tool.black]
+line-length = 100
+
+[tool.pytest.ini_options]
+pythonpath = [".", "src"]
+python_files = "test_*.py"
+testpaths = ["src/tests"]
