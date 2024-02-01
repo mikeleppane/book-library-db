@@ -92,7 +92,7 @@ class CLI:
 
 
 @click.command(
-    help="This is a simple simulator for generating ROA messages and sending those to AMQP."
+    help="The program is a simple database application (CLI) for managing a book library."
 )
 @click.version_option(__version__, prog_name="Library book database CLI")
 @click.argument(
