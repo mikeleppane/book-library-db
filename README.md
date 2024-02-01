@@ -23,7 +23,7 @@ Library DB is a simple database application (CLI) for managing a book library. T
 ### Steps
 
 1. Clone the repository
-2. Install dependencies with `poetry install` or `poetry install --no-dev` if you don't want to install development dependencies. Make sure you have Python 3.11 or newer installed. If not, you can install it with `pyenv install 3.11.6 (or 3.12.0)` and take it into use with `pyenv local 3.11.6 (or 3.12.0)`.
+2. Install dependencies with `poetry install` or `poetry install --only main` if you don't want to install development dependencies. Make sure you have Python 3.11 or newer installed. If not, you can install it with `pyenv install 3.11.6 (or 3.12.0)` and take it into use with `pyenv local 3.11.6 (or 3.12.0)`.
 
 ## Project Structure
 
