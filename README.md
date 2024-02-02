@@ -71,8 +71,8 @@ The application uses a file as a database. Each row in the file represents a boo
 The database file must be in the following format:
 
 ```text
-title/author/year/isbn 
-title/author/year/isbn
+title/author/isbn/year (Book 1) 
+title/author/isbn/year (Book 2)
 ```
 
 The file can contain any number of books. The application assumes that the file is in the correct format and contains valid data. If the file is not in the correct format or otherwise contains invalid data, the application will print an error message and exit. In addition, the file can contain empty lines. Those lines will be ignored and removed when the application sync the database file.
