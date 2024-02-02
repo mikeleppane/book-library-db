@@ -65,6 +65,18 @@ The application supports the following command line options:
 - `--help` or `-h`: Prints help message
 - `--version` or `-v`: Prints application version
 
+### Database file
+
+The application uses a file as a database. Each row in the file represents a book and only one book per row is allowed.
+The database file must be in the following format:
+
+```text
+title/author/year/isbn 
+title/author/year/isbn
+```
+
+The file can contain any number of books. The application assumes that the file is in the correct format and contains valid data. If the file is not in the correct format or otherwise contains invalid data, the application will print an error message and exit. In addition, the file can contain empty lines. Those lines will be ignored and removed when the application sync the database file.
+
 ### How to use the application
 
 When the application is started, you will see the following menu:
