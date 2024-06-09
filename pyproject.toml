@@ -21,6 +21,7 @@ isort = "^5.13.2"
 black = "^24.1.1"
 pytest = "^8.0.0"
 pytest-cov = "^4.1.0"
+pre-commit = "^3.7.1"
 
 [build-system]
 requires = ["poetry-core"]
@@ -94,7 +95,7 @@ preview = true
 [tool.mypy]
 exclude = "setup.py"
 
-# basic 
+# basic
 pretty = true
 
 # be strict(ish)
